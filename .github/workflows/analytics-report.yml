@@ -2,7 +2,7 @@ name: 7 Day Google Analytics Report
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs every day at midnight UTC
+    - cron: '0 10 * * 5' # Runs every Friday at 10 AM UTC
   workflow_dispatch: # Allows manual triggering
 
 jobs:
