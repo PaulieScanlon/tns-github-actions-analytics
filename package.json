@@ -5,16 +5,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile": "ncc build src/index.js -a",
-    "postinstall": "husky install"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@vercel/ncc": "^0.38.1",
-    "dotenv": "^16.4.5",
-    "husky": "^9.0.11"
+    "dotenv": "^16.4.5"
   },
   "dependencies": {
     "@google-analytics/data": "^4.7.0"
