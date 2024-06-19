@@ -1,5 +1,5 @@
 try {
-  console.log('////  test 123');
+  console.log('////  test');
 } catch (error) {
   console.error('///// error');
 }
