@@ -1,0 +1,22 @@
+name: Test JavaScript function
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs every day at midnight UTC
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3 # Check out the repository
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3 # Set up Node.js
+        with:
+          node-version: '20' # Use Node.js version 20
+
+      - name: Run the JavaScript script
+        run: node dist/index.js # Execute the script
