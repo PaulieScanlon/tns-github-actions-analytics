@@ -13,7 +13,8 @@ const init = async () => {
       credentials,
     });
 
-    console.log(credentials);
+    // console.log(credentials);
+    console.log(analyticsDataClient);
 
     // const [response] = await analyticsDataClient.runReport({
     //   property: `properties/${process.env.GA4_PROPERTY_ID}`,
