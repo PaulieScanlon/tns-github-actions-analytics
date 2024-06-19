@@ -13,24 +13,17 @@ const init = async () => {
       credentials,
     });
 
-    // console.log(credentials);
-    // console.log(analyticsDataClient);
-    // console.log('GA4_PROPERTY_ID: ', process.env.GA4_PROPERTY_ID);
-
-    const [response] = await analyticsDataClient.runReport({
-      property: `properties/${process.env.GA4_PROPERTY_ID}`,
+    const test = await analyticsDataClient.runReport({
+      property: 'properties/282354357',
       dateRanges: [
         {
-          startDate: '7daysAgo',
+          startDate: '2020-03-31',
           endDate: 'today',
         },
       ],
       dimensions: [
         {
-          name: 'fullPageUrl',
-        },
-        {
-          name: 'pageTitle',
+          name: 'city',
         },
       ],
       metrics: [
@@ -38,11 +31,36 @@ const init = async () => {
           name: 'activeUsers',
         },
       ],
-      limit: 10,
-      metricAggregations: ['MAXIMUM'],
     });
 
-    console.log(response);
+    console.log(test);
+
+    // const [response] = await analyticsDataClient.runReport({
+    //   property: `properties/${process.env.GA4_PROPERTY_ID}`,
+    //   dateRanges: [
+    //     {
+    //       startDate: '7daysAgo',
+    //       endDate: 'today',
+    //     },
+    //   ],
+    //   dimensions: [
+    //     {
+    //       name: 'fullPageUrl',
+    //     },
+    //     {
+    //       name: 'pageTitle',
+    //     },
+    //   ],
+    //   metrics: [
+    //     {
+    //       name: 'activeUsers',
+    //     },
+    //   ],
+    //   limit: 10,
+    //   metricAggregations: ['MAXIMUM'],
+    // });
+
+    // console.log(response);
 
     // Create the report string
     // const report = response.rows

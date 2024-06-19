@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile": "ncc build src/index.js",
+    "compile": "ncc build src/index.js -a",
     "postinstall": "husky install"
   },
   "keywords": [],
