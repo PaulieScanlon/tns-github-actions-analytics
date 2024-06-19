@@ -6,7 +6,7 @@
 /************************************************************************/
 var __webpack_exports__ = {};
 try {
-  console.log('////  test');
+  console.log('////  test 123');
 } catch (error) {
   console.error('///// error');
 }

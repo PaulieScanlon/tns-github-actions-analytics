@@ -1,14 +1,17 @@
 {
   "name": "tns-github-actions-analytics",
   "version": "1.0.0",
-  "description": "- [slack-github-action](https://github.com/slackapi/slack-github-action) - [Creating a JavaScript action](https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action) - [GitHub Actions Toolkit](https://github.com/actions/toolkit)",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "compile": "ncc build src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "husky install"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "dependencies": {}
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.1",
+    "husky": "^9.0.11"
+  }
 }

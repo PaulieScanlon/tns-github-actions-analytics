@@ -4,17 +4,9 @@
 - [Creating a JavaScript action](https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action)
 - [GitHub Actions Toolkit](https://github.com/actions/toolkit)
 
-## Uses vercel/ncc
-
-Install vercel/ncc globally so you can run the compile script.
-
-```shell
-npm i -g @vercel/ncc
-```
-
 ## Compile
 
-This step compiles index.js and outputs it to `dist/index.js` along with `licenses.txt`
+This step compiles `src/index.js` and outputs it to `dist/index.js`
 
 ```shell
 npm run compile

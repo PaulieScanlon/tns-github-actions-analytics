@@ -1,0 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "Running compile script..."
+npm run compile
+
+echo "Staging generated files..."
+git add dist/
