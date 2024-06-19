@@ -1,6 +1,7 @@
 {
   "name": "tns-github-actions-analytics",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,6 +13,10 @@
   "license": "MIT",
   "devDependencies": {
     "@vercel/ncc": "^0.38.1",
+    "dotenv": "^16.4.5",
     "husky": "^9.0.11"
+  },
+  "dependencies": {
+    "@google-analytics/data": "^4.7.0"
   }
 }
