@@ -42,19 +42,21 @@ const init = async () => {
       metricAggregations: ['MAXIMUM'],
     });
 
+    console.log(response);
+
     // Create the report string
-    const report = response.rows
-      .map((row, index) => {
-        const { dimensionValues, metricValues } = row;
+    // const report = response.rows
+    //   .map((row, index) => {
+    //     const { dimensionValues, metricValues } = row;
 
-        return `${index + 1}. <https://${dimensionValues[0].value}|${dimensionValues[1].value}> | *x${
-          metricValues[0].value
-        }*`;
-      })
-      .join('\\n')
-      .replace(/\\n/g, '\n');
+    //     return `${index + 1}. <https://${dimensionValues[0].value}|${dimensionValues[1].value}> | *x${
+    //       metricValues[0].value
+    //     }*`;
+    //   })
+    //   .join('\\n')
+    //   .replace(/\\n/g, '\n');
 
-    console.log(report);
+    // console.log(report);
 
     // Post message to Slack
     // fetch(process.env.SLACK_WEBHOOK_URL, {
