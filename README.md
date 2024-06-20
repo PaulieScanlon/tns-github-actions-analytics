@@ -1,18 +1,54 @@
-# tns-github-actions-analytics
+# Google Analytics to Slack GitHub Action
 
-## Useful links
+The steps to create the required Google Project, Slack Webhook and GitHub Action are detailed in the following article on The New Stack: [Post weekly Google Analytics reports to Slack with GitHub Actions](https://example.com)
 
-- [slack-github-action](https://github.com/slackapi/slack-github-action)
-- [Creating a JavaScript action](https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action)
-- [GitHub Actions Toolkit](https://github.com/actions/toolkit)
+## Getting started
 
-## Slack
+1. Clone the repository
+2. Rename `.env.example` to `.env`
+3. Update the following variables
+   - `SLACK_WEBHOOK_URL`
+   - `GA4_PROPERTY_ID`
+   - `GOOGLE_APPLICATION_CREDENTIALS_BASE64`
+4. Install dependencies (uses npm)
+   - `npm install`
 
-- [Incoming Webhooks](https://api.slack.com/apps/A079G5706QG/incoming-webhooks?success=1)
-- [Block Kit Builder](https://app.slack.com/block-kit-builder/T070FFUDNH3#%7B%22blocks%22:%5B%7B%22type%22:%22section%22,%22text%22:%7B%22type%22:%22plain_text%22,%22text%22:%22This%20is%20a%20plain%20text%20section%20block.%22,%22emoji%22:true%7D%7D%5D%7D)
+## Development
 
-## Google
+To invoke the function manually from your local development environment you can run the following in your terminal.
 
-- [Quick Start Client Libraries](https://developers.google.com/analytics/devguides/config/admin/v1/quickstart-client-libraries)
-- [Node.js Client Library](https://googleapis.dev/nodejs/analytics-admin/latest/index.html#installing-the-client-library)
-- [GA4 Query Explorer](https://ga-dev-tools.google/ga4/query-explorer/)
+```shell
+node src/index.js
+```
+
+### Creating a base64 URL
+
+The Google Application credentials are in `.json` format. To use them in a `.env` you can convert them to a base64 string by running the following in your terminal.
+
+```shell
+cat name-of-creds-file.json | base64
+
+```
+
+When saving the resulting string in your `.env` file be sure you wrap it with quotations, e.g. `GOOGLE_APPLICATION_CREDENTIALS_BASE64="abc123..."`
+
+### Cron syntax
+
+The GitHub Action in this repo is scheduled to run each Friday at 10am UTC. A [schedule](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule) uses [POSIX cron syntax](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07), e.g.
+
+```yml
+on:
+  schedule:
+    - cron: '0 10 * * 5' # Runs every Friday at 10 AM UTC
+```
+
+### Manual trigger
+
+The GitHub Action in this repo contains the following which allows you trigger the workflow manually from the GitHub UI.
+
+```yml
+on:
+  ...
+    - ...
+  workflow_dispatch: # Allows manual triggering
+```
