@@ -1,6 +1,14 @@
-# Google Analytics to Slack GitHub Action
+<p align="center">
+  <a href="https://thenewstack.io/how-to-use-github-actions-and-apis-to-surface-important-data/">
+    <img alt="paulie.dev" src="https://cdn.thenewstack.io/media/2024/06/70c2a9c7-tns-google-analytics-report-featured-image-1024x538.jpg" />
+  </a>
+</p>
 
-The steps to create the required Google Project, Slack Webhook and GitHub Action are detailed in the following article on The New Stack: [Post weekly Google Analytics reports to Slack with GitHub Actions](https://example.com)
+<br />
+
+# Google Analytics to Slack Notification using GitHub Actions
+
+The steps to create the required Google Project, Slack Webhook and GitHub Action are detailed in the following article on The New Stack: [How To Use GitHub Actions and APIs to Surface Important Data](https://thenewstack.io/how-to-use-github-actions-and-apis-to-surface-important-data/)
 
 ## Getting started
 
